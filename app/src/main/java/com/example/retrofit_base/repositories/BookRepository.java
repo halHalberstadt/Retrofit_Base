@@ -26,7 +26,7 @@ public class BookRepository {
         volumesResponseLiveData = new MutableLiveData<>();
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.level(HttpLoggingInterceptor.Level.BODY);
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         bookSearchService = new retrofit2.Retrofit.Builder()
